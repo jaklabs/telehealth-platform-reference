@@ -1,0 +1,21 @@
+{
+  "name": "telehealth-platform-reference",
+  "version": "1.0.0",
+  "description": "Multi-tenant clinical platform — architecture reference. Tenant isolation at the database, and a clinical-network adapter boundary.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test 'src/**/*.test.ts'"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.0"
+  },
+  "dependencies": {
+    "pg": "^8.13.0"
+  },
+  "engines": { "node": ">=22.6.0" }
+}
