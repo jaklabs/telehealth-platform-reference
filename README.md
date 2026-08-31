@@ -172,6 +172,19 @@ Manager, SES, SQS) · Terraform · Node's built-in test runner, no framework.
 
 ---
 
+## License
+
+**Published to be read, not reused.**
+
+This is a portfolio artifact — the four decisions that made the product work, and
+the code and tests that enforce them. It carries no open-source licence, so
+ordinary copyright applies and all rights are reserved. Read it, quote it, argue
+with it. Don't lift it into your own product.
+
+If you want to use something here, ask — the answer is usually yes.
+
+---
+
 Built by **JD Kemp** — [jaklabs.io](https://jaklabs.io)
 
 I build operations software for small businesses, and I run one myself, which is
