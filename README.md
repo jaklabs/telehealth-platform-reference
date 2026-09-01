@@ -85,15 +85,19 @@ to publish.
 
 `src/adapters/adapters.test.ts`
 
-One clinical network in production could not authenticate its webhooks at all —
-no signature, no shared secret, no mTLS, keyed only on an identifier the
-platform itself generated. A callback claiming a prescription had been written
-was forgeable by anyone who could guess an id.
+Not every vendor can authenticate its webhooks, and you will not always get to
+pick your vendor. Verification is therefore something an adapter **declares**
+rather than something the platform assumes.
 
 You cannot refuse to integrate on that basis, and you must not silently trust
-it. So `capabilities.webhookVerification` is part of the contract, and where it
-is false the pipeline treats an event as a prompt to go and re-read
-authoritative state over the authenticated API — never as the state itself.
+it either. So `capabilities.webhookVerification` is part of the contract, and
+where it is false the pipeline treats an event as a prompt to go and re-read
+authoritative state over the authenticated API — never as the state itself. An
+unverifiable callback can move the platform's attention; it can never move its
+data.
+
+That is the whole design, and it holds without naming anyone: the property
+belongs to the interface, not to a particular integration.
 
 The test asserts the property rather than the vendor: every registered adapter
 must declare whether its webhooks can be verified.
